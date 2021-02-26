@@ -1,111 +1,203 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-    <head>
-        <style>
-            .container:hover{
 
-                margin-bottom: 100px;
-                margin-right: 40%;
-                margin-left: 40%;
-                padding-left: 50px;
-                padding-right: 40px;
-                background-color:#CAFAFE;
-                opacity: 0.5;
-                animation-name: example;
-                animation-duration: 5s;
-                border: 10px solid transparent;
-                padding: 15px;
-                transition: width 2s, height 4s;
-                border: 4px dotted blue;
+<head>
+    <style>
+        .container {
+
+            margin-bottom: 100px;
+            margin-right: 40%;
+            margin-left: 40%;
+            padding-left: 50px;
+            padding-right: 40px;
+            background-color: #CAFAFE;
+            opacity: 0.5;
+            animation-name: example;
+            animation-duration: 5s;
+            border: 10px solid transparent;
+            padding: 15px;
+            transition: width 2s, height 4s;
+            border: 4px dotted blue;
 
 
+        }
+
+        @keyframes example {
+            0% {
+                background-color: red;
             }
-            @keyframes example {
-                0%   {background-color: red;}
-                25%  {background-color: tomato;}
-                50%  {background-color: pink;}
-                100% {background-color: green;}
+
+            25% {
+                background-color: tomato;
             }
-            #A{
-                border: 1px solid red;
+
+            50% {
+                background-color: pink;
             }
-         
-        </style>    
-        <link rel="stylesheet" href="newcss.css">
-    </head>
-    <body style="background-image: url('Assignment1/img/ariel.jpg'); background-size:cover;">
-        <center><h2 id="S">Java Registration application   </h2></center>
-        <div class="container">
 
-            <form name="form" action="#" method="post" >
+            100% {
+                background-color: green;
+            }
+        }
 
+        .input {
+            border: 1px solid red;
+        }
+    </style>
+    <link rel="stylesheet" href="newcss.css">
+</head>
 
-                <table align="center">
-                    <tr>
-                        <td id ="B">First Name</td>
-                        <td id="A"><input type="text" name="firstname"  title="plese enter alphabetical"  required ></td>
-                    </tr>
-                    <tr>
-                        <td >Last Name</td>
-                        <td id="A"><input type="text" name="lastName"   title="plese enter alphabetical" required /></td>
-                    </tr>
+<body>
+    <center>
+        <h2 id="S">Java Registration application </h2>
+    </center>
+    <div class="container">
 
-                    <tr>
-                        <td>Date of birth</td>
-                        <td id="A"><input type="date" name="dob1"    title="plese enter alphabetical value" required /></td>
-                    </tr>
-                    <tr>
-                        <td>age</td>
-                        <td id="A"><input type="number" name="age" title="plese enter age between" required /></td>
-                    </tr>
-
-                    <tr>
-                        <td>Address</td>
-                        <td id="A"><input type="text" name="address"   required/></td>
-                    </tr>
-
-                    <tr>
-                        <td>City</td>
-                        <td id="A"><input type="text" name="city"   required /></td>
-                    </tr>
-                    <tr>
-                        <td>state</td>
-                        <td id="A"><input type="text" name="state"  required/></td>
-                    </tr>
-                    <tr>
-                        <td>Contact no:</td>
-                        <td id="A"><input type="int" name="contact"  required/></td>
-                    </tr>
-                    <tr>
-
-                        <td style="margin-left:20%"><label for="city">CITY:</label>
-
-                            <select id="A" style="padding-left:10%;margin-left:103%;margin-top:-19%">
-                                <option value="india">India</option>
-                                <option value="usa">USA</option>
-                                <option value="uk">UK</option>
-                                <option value="russia">Russia</option>
-                            </select></td>
-
-                    </tr>
+        <form name="form" action="#" onsubmit="AddRow()">
 
 
-                    <tr>
-                        <td>postal code</td>
-                        <td id="A"><input type="text" name="postalcode" pattern="[0-9]{6}" required /></td>
-                    </tr>
+            <table align="center">
+                <tr>
+                    <td id="B">First Name</td>
+                    <td class="input"><input type="text" name="firstname" id="name" title="plese enter alphabetical"
+                            required></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td class="input"><input type="text" name="lastName" id="lastname" title="plese enter alphabetical"
+                            required /></td>
+                </tr>
 
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" value="submit"></input><input
-                                type="reset" value="Reset"></input></td>
-                    </tr>
-                </table>
+                <tr>
+                    <td>Date of birth</td>
+                    <td class="input"><input type="date" name="dob1" id="DOB" title="plese enter alphabetical value"
+                            required /></td>
+                </tr>
+                <tr>
+                    <td>age</td>
+                    <td class="input"><input type="number" name="age" id="age" title="plese enter age between"
+                            required /></td>
+                </tr>
 
-            </form>
+                <tr>
+                    <td>Address</td>
+                    <td class="input"><input type="text" name="address" id="address" required /></td>
+                </tr>
 
-        </div>
-    </body>
+                <tr>
+                    <td>City</td>
+                    <td class="input"><input type="text" name="city" id="city" required /></td>
+                </tr>
+                <tr>
+                    <td>state</td>
+                    <td class="input"><input type="text" name="state" id="state" required /></td>
+                </tr>
+                <tr>
+                    <td>Contact no:</td>
+                    <td class="input"><input type="int" name="contact" id="contact" required /></td>
+                </tr>
+                <tr>
+
+                    <td style="margin-left:20%"><label for="city">CITY:</label>
+
+                        <select class="input" style="padding-left:10%;margin-left:103%;margin-top:-19%">
+                            <option value="india">India</option>
+                            <option value="usa">USA</option>
+                            <option value="uk">UK</option>
+                            <option value="russia">Russia</option>
+                        </select>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <td>postal code</td>
+                    <td class="input"><input type="text" name="postalcode" pattern="[0-9]{6}" required /></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="Submit" value="Submit" /><input
+                            type="reset" value="Reset"></input></td>
+                </tr>
+            </table>
+
+        </form>
+
+    </div>
+    <table border="8" id="show">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>l name</th>
+                <th>dob</th>
+                <th>Age</th>
+                <th>address</th>
+                <th>city</th>
+                <th>state</th>
+                <th>contact</th>
+
+            </tr>
+        </thead>
+    </table>
+    <script>
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+        var list6 = [];
+        var list7 = [];
+        var list8 = [];
+        var n = 1;
+        var x = 0;
+        function AddRow() {
+            var AddRown = document.getElementById('show');
+            var NewRow = AddRown.insertRow(n);
+            list1[x] = document.getElementById("name").value;
+            list2[x] = document.getElementById("lastname").value;
+
+            list3[x] = document.getElementById("DOB").value;
+
+            list4[x] = document.getElementById("age").value;
+
+            list5[x] = document.getElementById("address").value;
+
+            list6[x] = document.getElementById("city").value;
+
+            list7[x] = document.getElementById("state").value;
+            list8[x] = document.getElementById("contact").value;
+            console.log(list1[x], list2[x], list3[x], list4[x], list5[x], list6[x], list7[x],list8[x]);
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+            var cel6 = NewRow.insertCell(5);
+            var cel7 = NewRow.insertcell(6);
+            var cel8 = NewRow.insertcell(7);
+
+
+
+            cel1.innerHTML = list1[x];
+            cel2.innerHTML = list2[x];
+            cel3.innerHTML = list3[x];
+            cel4.innerHTML = list4[x];
+            cel5.innerHTML = list5[x];
+            cel6.innerHTML = list6[x];
+            cel7.innerHTML = list7[x];
+            cel8.innerHTML = list8[x];
+
+
+
+            n++;
+            x++;
+            
+        }
+
+
+    </script>
+</body>
+
 </html>

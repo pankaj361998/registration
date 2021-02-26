@@ -15,3 +15,7 @@ h2 {
     background-position: 100% 0, 0 100%, 0 0, 100% 100%;
   }
 }
+#show th, #show td
+{
+   padding:13px;
+}
